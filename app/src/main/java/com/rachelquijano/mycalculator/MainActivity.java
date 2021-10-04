@@ -106,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 result = Double.parseDouble(oldNumber) / Double.parseDouble(newNumber);
                 break;
         }
+        if(result % 1 == 0){
+            int res = (int)result;
+            edText.setText(res + "");
+            return;
+        }
         edText.setText(result + "");
     }
 
