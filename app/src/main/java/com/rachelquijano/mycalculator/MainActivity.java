@@ -3,6 +3,7 @@ package com.rachelquijano.mycalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -63,10 +64,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnPlusMinus:
                 double numMultiplied = Double.parseDouble(number);
                 numMultiplied *= -1;
+                if(numMultiplied % 1 == 0) {
+                    int res = (int) numMultiplied;
+                    number = String.valueOf(res);
+                    break;
+                }
                 number = String.valueOf(numMultiplied);
+                edText.setText(number + "");
                 break;
-
-        }
+                }
         edText.setText(number);
     }
 
