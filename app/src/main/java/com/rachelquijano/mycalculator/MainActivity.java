@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
                 number += ".";
                 break;
             case R.id.btnPlusMinus:
-                number = "-"+number;
+                double numMultiplied = Double.parseDouble(number);
+                numMultiplied *= -1;
+                number = String.valueOf(numMultiplied);
                 break;
 
         }
